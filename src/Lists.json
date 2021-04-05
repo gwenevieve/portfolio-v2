@@ -1,0 +1,16 @@
+{
+  "techList": [
+    "HTML5 (Handlebars, YAML",
+    "CSS (SCSS/SASS/LESS, Bootstrap, ZURB Foundation)",
+    "JavaScript (React, jQuery, React Native, Node)",
+    "Docker/Vagrant",
+    "PHP (WordPress, Composer)"
+  ],
+  "projects": [
+    {
+      "name": "",
+      "desc": "",
+      "techUSed": ""
+    }
+  ]
+}
