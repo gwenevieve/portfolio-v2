@@ -1,0 +1,17 @@
+{
+  "techList": [
+    "HTML5 (Handlebars, YAML)",
+    "CSS (SCSS/SASS/LESS, Bootstrap, ZURB Foundation, Material UI)",
+    "JavaScript (React, jQuery, Typescript React Native, Node)",
+    "Docker/Vagrant",
+    "PHP (WordPress, Composer)",
+    "Other popular libraries such as Mapbox GL JS, Google Maps JavaScript API, Handlebars, and the Google Custom Search JSON API"
+  ],
+  "projects": [
+    {
+      "name": "",
+      "desc": "",
+      "techUsed": ""
+    }
+  ]
+}
