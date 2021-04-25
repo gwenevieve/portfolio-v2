@@ -5,7 +5,7 @@ const TechList = () => {
   return (
     <Techs>
       <p>Some of the technologies I've recently worked with:</p>
-      <ul classList="techList">
+      <ul>
         {Lists.techList.map((element, i) => {
           return <li key={i}>{element}</li>;
         })}

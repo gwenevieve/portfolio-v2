@@ -1,6 +1,10 @@
 import Button from "./Button";
 import styled, { keyframes } from "styled-components";
 
+const handleClick = (event) => {
+  // form here.
+};
+
 const Header = () => {
   return (
     <HeaderContainer>
@@ -17,7 +21,7 @@ const Header = () => {
         and Digital Forensics, along with a some networking courses at
         Centennial College.
       </p>
-      <Button title="Contact me" link="" />
+      <Button title="Contact me" handleClick={handleClick} />
     </HeaderContainer>
   );
 };

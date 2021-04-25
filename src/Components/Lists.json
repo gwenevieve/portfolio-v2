@@ -1,6 +1,6 @@
 {
   "techList": [
-    "HTML5 (Handlebars, YAML)",
+    "HTML5 (Handlebars, YAML, Markdown)",
     "CSS (SCSS/SASS/LESS, Bootstrap, ZURB Foundation, Material UI)",
     "JavaScript (React, jQuery, Typescript React Native, Node)",
     "Docker/Vagrant",
@@ -9,9 +9,60 @@
   ],
   "projects": [
     {
-      "name": "",
+      "name": "Portfolio V2",
+      "desc": "Updated version of my portfolio website.",
+      "techUsed": [
+        "React",
+        "styled-components",
+        "FontAwesome",
+        "CSS Keyframes",
+        "Flexbox",
+        "ES6",
+        "Yarn"
+      ],
+      "Github": ""
+    },
+    {
+      "name": "Family Tree",
       "desc": "",
-      "techUsed": ""
+      "techUsed": "",
+      "Github": ""
+    },
+    {
+      "name": "React Social Card Components",
+      "desc": "",
+      "techUsed": [
+        "HTML5",
+        "CSS (SCSS)",
+        "Flexbox",
+        "JavaScript(ES6)",
+        "React",
+        "OpenWeather API",
+        "NPM",
+        "Deployed on Heroku",
+        "Unsplash for photographs"
+      ],
+      "Github": ""
+    },
+    {
+      "name": "Live Stock Dashboard",
+      "desc": "",
+      "techUsed": "",
+      "Github": ""
+    },
+    {
+      "name": "Portfolio V1",
+      "desc": "",
+      "techUsed": [
+        "HTML5 / YAML",
+        "SCSS",
+        "FontAwesome",
+        "Jekyll",
+        "Liquid",
+        "CSS Keyframes",
+        "Bootstrap 4"
+      ],
+      "Github": ""
     }
   ]
 }

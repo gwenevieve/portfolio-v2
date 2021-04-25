@@ -1,10 +1,12 @@
 import Header from "./Components/Header";
 import TechList from "./Components/TechList";
+import Socials from "./Components/Social";
 import styled from "styled-components";
 
 function App() {
   return (
     <Container>
+      <Socials />
       <Header />
       <TechList />
     </Container>

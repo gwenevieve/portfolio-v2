@@ -1,7 +1,21 @@
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Button = ({ title, link }) => {
-  return <Link href={link}>{title}</Link>;
+const Button = ({ title, link, icon, handleClick }) => {
+  return (
+    <>
+      {icon ? (
+        <Link onClick={handleClick} icon={icon} href={link}>
+          <FontAwesomeIcon icon={icon} />
+          {title}
+        </Link>
+      ) : (
+        <Link onClick={handleClick} href={link}>
+          {title}
+        </Link>
+      )}
+    </>
+  );
 };
 
 const Link = styled.a`
@@ -22,6 +36,26 @@ const Link = styled.a`
     background-color: #d6d6d6;
     cursor: pointer;
   }
+
+  ${({ icon }) =>
+    icon &&
+    `
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: unset;
+    margin: 10px 0px;
+    svg {
+      margin-bottom: 5px;
+      font-size: 40px;
+    }
+    &:hover {
+      color: unset;
+      background-color: unset;
+      cursor: pointer;
+    }
+  `}
 `;
 
 export default Button;
