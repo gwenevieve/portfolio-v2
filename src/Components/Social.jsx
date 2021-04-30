@@ -9,9 +9,8 @@ const SocialLinks = ({ handleClick }) => {
       <Button
         title="Github"
         icon={faGithub}
-        link="https://github.com/gwenevieve">
-        {" "}
-      </Button>
+        link="https://github.com/gwenevieve"
+      />
       <Button
         title="LinkedIn"
         icon={faLinkedin}

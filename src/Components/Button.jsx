@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Button = ({ title, link, icon, handleClick }) => {
+const Button = ({ title, link, aria, icon, handleClick }) => {
   return (
     <>
       {icon ? (

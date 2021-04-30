@@ -18,7 +18,8 @@
         "CSS Keyframes",
         "Flexbox",
         "ES6",
-        "Yarn"
+        "Yarn",
+        "Google Tag Manager & Google Analytics"
       ],
       "Github": ""
     },
@@ -30,7 +31,7 @@
     },
     {
       "name": "React Social Card Components",
-      "desc": "",
+      "desc": "Some 'social' card components commonly seen around the web, built in React. Includes avatars, sliders, and a list! Recently converted from class based components to hook based components.",
       "techUsed": [
         "HTML5",
         "CSS (SCSS)",
@@ -60,7 +61,8 @@
         "Jekyll",
         "Liquid",
         "CSS Keyframes",
-        "Bootstrap 4"
+        "Bootstrap 4",
+        "Google Tag Manager & Google Analytics"
       ],
       "Github": ""
     }

@@ -15,7 +15,7 @@ const TechList = () => {
 };
 
 const Techs = styled.div`
-  padding: 40px 180px;
+  padding: 30px 180px;
   width: 600px;
 
   ul {

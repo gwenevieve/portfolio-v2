@@ -1,6 +1,7 @@
 import Header from "./Components/Header";
 import TechList from "./Components/TechList";
 import Socials from "./Components/Social";
+import ProjectList from "./Components/ProjectList";
 import styled from "styled-components";
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <Socials />
       <Header />
       <TechList />
+      <ProjectList />
     </Container>
   );
 }

@@ -1,14 +1,13 @@
+import Lists from "./Lists";
 import Button from "./Button";
 import styled from "styled-components";
 
-const Project = ({ title, desc }) => {
+const ProjectList = () => {
   return (
     <ProjectContainer>
-      <h3>{title}</h3>
-      <p>{desc}</p>
-
-      <Button title="Github link" />
-      <Button title="Live link" />
+      {Lists.projects.map((element, i) => {
+        return <Project key={i}>{element.techUsed}</Project>;
+      })}
     </ProjectContainer>
   );
 };
@@ -18,4 +17,6 @@ const ProjectContainer = styled.main`
   width: 600px;
 `;
 
-export { Project };
+const Project = styled.div``;
+
+export default ProjectList;

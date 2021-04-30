@@ -39,7 +39,7 @@ const Blinking = keyframes`
 `;
 
 const HeaderContainer = styled.header`
-  padding: 60px 180px 40px;
+  padding: 60px 180px 30px;
   width: 600px;
 
   h1 {
