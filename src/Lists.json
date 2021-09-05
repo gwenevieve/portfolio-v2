@@ -2,14 +2,13 @@
   "techList": [
     "HTML5 (Handlebars, YAML, Markdown)",
     "CSS (SCSS/SASS/LESS, Bootstrap, ZURB Foundation, Material UI)",
-    "JavaScript (React, jQuery, Typescript React Native, Node)",
+    "JavaScript (React, jQuery, Typescript React Native, Node.js)",
     "Docker/Vagrant",
-    "PHP (WordPress, Composer)",
-    "Other popular libraries such as Mapbox GL JS, Google Maps JavaScript API, Handlebars, and the Google Custom Search JSON API"
+    "PHP (WordPress, Composer)"
   ],
   "projects": [
     {
-      "name": "Portfolio V2",
+      "name": "Portfolio v2",
       "desc": "Updated version of my portfolio website.",
       "techUsed": [
         "React",
@@ -18,20 +17,13 @@
         "CSS Keyframes",
         "Flexbox",
         "ES6",
-        "Yarn",
-        "Google Tag Manager & Google Analytics"
+        "Yarn"
       ],
-      "Github": ""
-    },
-    {
-      "name": "Family Tree",
-      "desc": "",
-      "techUsed": "",
-      "Github": ""
+      "Github": "https://github.com/gwenevieve/portfolio-v2"
     },
     {
       "name": "React Social Card Components",
-      "desc": "Some 'social' card components commonly seen around the web, built in React. Includes avatars, sliders, and a list! Recently converted from class based components to hook based components.",
+      "desc": "Some social card components commonly seen around the web, built in React. Includes avatars, sliders, and a list! Recently converted from class based components to hook based components.",
       "techUsed": [
         "HTML5",
         "CSS (SCSS)",
@@ -40,20 +32,14 @@
         "React",
         "OpenWeather API",
         "NPM",
-        "Deployed on Heroku",
+        "Deployed on Heroku previously",
         "Unsplash for photographs"
       ],
-      "Github": ""
+      "Github": "https://github.com/gwenevieve/social-cards"
     },
     {
-      "name": "Live Stock Dashboard",
-      "desc": "",
-      "techUsed": "",
-      "Github": ""
-    },
-    {
-      "name": "Portfolio V1",
-      "desc": "",
+      "name": "Portfolio v1",
+      "desc": "First version of my portfolio.",
       "techUsed": [
         "HTML5 / YAML",
         "SCSS",
@@ -64,7 +50,7 @@
         "Bootstrap 4",
         "Google Tag Manager & Google Analytics"
       ],
-      "Github": ""
+      "Github": "https://github.com/gwenevieve/portfolio"
     }
   ]
 }
