@@ -5,13 +5,14 @@ const Link = ({ text, link, icon, handleClick }) => {
   return (
     <>
       {icon ? (
-        <StyledLink
+        <StyledIcon
           onClick={handleClick ? handleClick : undefined}
           icon={icon}
-          href={link}>
+          href={link}
+          target="_blank">
           <FontAwesomeIcon icon={icon} />
           {text}
-        </StyledLink>
+        </StyledIcon>
       ) : (
         <StyledLink href={link} target="_blank">
           {text}
@@ -25,6 +26,7 @@ const StyledLink = styled.a`
   display: inline-block;
   font-family: "Lato", sans-serif;
   color: #d6d6d6;
+  font-size: 18px;
   background: unset;
   border: 1px solid #d6d6d6;
   border-radius: 5px;
@@ -35,6 +37,30 @@ const StyledLink = styled.a`
   text-decoration: none;
   line-height: initial;
   transition: 0.4s;
+  &:hover {
+    color: #1b1b1b;
+    background-color: #d6d6d6;
+    cursor: pointer;
+  }
+`;
+
+const StyledIcon = styled.a`
+  display: inline-block;
+  font-family: "Lato", sans-serif;
+  color: #d6d6d6;
+  background: unset;
+  border: 1px solid #d6d6d6;
+  border-radius: 5px;
+  padding: 12px 0px;
+  margin: 20px 0px;
+  width: 120px;
+  text-align: center;
+  text-decoration: none;
+  line-height: initial;
+  transition: 0.4s;
+  @media (max-width: 500px) {
+    width: 80px;
+  }
   &:hover {
     color: #1b1b1b;
     background-color: #d6d6d6;
@@ -53,6 +79,9 @@ const StyledLink = styled.a`
     svg {
       margin-bottom: 5px;
       font-size: 40px;
+      @media (max-width: 500px) {
+        font-size: 24px;
+      }
     }
     &:hover {
       color: unset;

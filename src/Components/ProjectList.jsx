@@ -11,14 +11,14 @@ const ProjectList = () => {
           A few personal projects that I've worked on by myself or with friends.
           If you want to collaborate on something, send me an email!
         </Text>
-        {Lists.projects.map((project, i) => {
+        {Lists.projects.map((project, projectIndex) => {
           return (
-            <Project key={i}>
+            <Project key={projectIndex}>
               <ProjectTitle>{project.name}</ProjectTitle>
               <Text>{project.desc}</Text>
               <TechItems>
-                {project.techUsed.map((tech) => {
-                  return <TechItem>{tech}</TechItem>;
+                {project.techUsed.map((tech, techIndex) => {
+                  return <TechItem key={techIndex}>{tech}</TechItem>;
                 })}
               </TechItems>
               <Link link={project.Github} text="Github" />

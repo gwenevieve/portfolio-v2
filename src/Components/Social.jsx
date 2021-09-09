@@ -7,17 +7,17 @@ const SocialLinks = ({ setModalActive }) => {
   return (
     <Socials>
       <Link
-        title="Github"
+        text="Github"
         icon={faGithub}
         link="https://github.com/gwenevieve"
       />
       <Link
-        title="LinkedIn"
+        text="LinkedIn"
         icon={faLinkedin}
         link="https://www.linkedin.com/in/marie-felton/"
       />
       <Link
-        title="Email"
+        text="Email"
         icon={faEnvelope}
         handleClick={() => setModalActive(true)}
       />

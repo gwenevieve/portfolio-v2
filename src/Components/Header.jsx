@@ -17,7 +17,12 @@ const Header = ({ setModalActive }) => {
         and Digital Forensics, along with a some networking courses at
         Centennial College.
       </Text>
-      <Button text="Contact me" handleClick={() => setModalActive(true)} />
+      <Button
+        aria="Opens contact dialog"
+        type="button"
+        text="Contact me"
+        handleClick={() => setModalActive(true)}
+      />
     </HeaderContainer>
   );
 };

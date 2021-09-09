@@ -36,6 +36,7 @@ const Socials = styled.div`
   display: none;
   @media (max-width: 992px) {
     display: flex;
+    justify-content: center;
   }
 `;
 
