@@ -3,6 +3,7 @@ import styled from "styled-components";
 import AriaModal from "react-aria-modal";
 import Button from "./Button";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { send } from "emailjs-com";
 
 const ContactModal = ({ modalActive, setModalActive }) => {
@@ -10,10 +11,13 @@ const ContactModal = ({ modalActive, setModalActive }) => {
     firstName: { value: "", error: false, touched: false },
     lastName: { value: "", error: false, touched: false },
     email: { value: "", error: false, touched: false },
-    phone: { value: "", error: false, touched: false },
+    phone: { value: "" },
     comments: { value: "" },
   });
+
   const [formSuccess, setFormSuccess] = useState(false);
+  const [formValid, setFormValid] = useState(undefined);
+  const [loading, setLoading] = useState(false);
 
   const phoneFormatter = (phoneNumber) => {
     if (phoneNumber.length <= 10) {
@@ -46,42 +50,66 @@ const ContactModal = ({ modalActive, setModalActive }) => {
 
   const clearForm = () => {
     setFormValues({
-      firstName: { value: "", error: false, touched: false },
-      lastName: { value: "", error: false, touched: false },
-      email: { value: "", error: false, touched: false },
-      phone: { value: "", error: false, touched: false },
+      firstName: { value: "", error: true, touched: false },
+      lastName: { value: "", error: true, touched: false },
+      email: { value: "", error: true, touched: false },
+      phone: { value: "" },
       comments: { value: "" },
     });
     setFormSuccess(false);
   };
 
   const submitForm = () => {
-    console.log(formValues);
-    // if (
-    //   !formValues.firstName.value &&
-    //   !formValues.lastName.value &&
-    //   !formValues.email.value &&
-    //   !formValues.phone.value
-    // ) {
-    //   setFormValues({ firstName: { error: true } });
-    //   setFormValues({ lastName: { error: true } });
-    //   setFormValues({ email: { error: true } });
-    //   setFormValues({ phone: { error: true } });
-    // } else {
-    // Submit the form
-    send(
-      "service_prk7c2d",
-      "template_k4ccoe5",
-      formValues,
-      "user_CjPTrPI4mvMSmkdfOAyvz"
-    )
-      .then(() => {
-        setFormSuccess(true);
-      })
-      .catch((err) => {
-        console.error("Send failed!", err);
+    if (
+      !formValues.firstName.value ||
+      !formValues.lastName.value ||
+      !formValues.email.value
+    ) {
+      setFormValid(false);
+      setFormValues({
+        ...formValues,
+        firstName: {
+          error: true,
+        },
+        lastName: {
+          error: true,
+        },
+        email: {
+          error: true,
+        },
       });
-    // }
+    } else {
+      setLoading(true);
+      setFormValid(true);
+      setFormValues({
+        ...formValues,
+        firstName: {
+          ...formValues.firstName,
+          error: false,
+        },
+        lastName: {
+          ...formValues.lastName,
+          error: false,
+        },
+        email: {
+          ...formValues.email,
+          error: false,
+        },
+      });
+      send(
+        "service_prk7c2d",
+        "template_k4ccoe5",
+        formValues,
+        "user_CjPTrPI4mvMSmkdfOAyvz"
+      )
+        .then(() => {
+          setFormSuccess(true);
+          setLoading(false);
+        })
+        .catch((err) => {
+          console.error("Send failed!", err);
+        });
+    }
   };
 
   return modalActive ? (
@@ -96,6 +124,7 @@ const ContactModal = ({ modalActive, setModalActive }) => {
               handleClick={() => {
                 setModalActive(!modalActive);
                 clearForm();
+                setLoading(false);
               }}
             />
           </ModalTop>
@@ -122,7 +151,17 @@ const ContactModal = ({ modalActive, setModalActive }) => {
                     setFormValues({
                       ...formValues,
                       firstName: {
+                        ...formValues.firstName,
                         value: e.target.value,
+                      },
+                    });
+                  }}
+                  onBlur={() => {
+                    setFormValues({
+                      ...formValues,
+                      firstName: {
+                        ...formValues.firstName,
+                        touched: true,
                       },
                     });
                   }}
@@ -131,10 +170,14 @@ const ContactModal = ({ modalActive, setModalActive }) => {
                   type="text"
                   maxLength="25"
                 />
-                {/* {formValues.firstName.error === true ? (
-                  <Error>Please enter your first name.</Error>
-                ) : null} */}
+
+                {((!formValues.firstName.value &&
+                  formValues.firstName.touched) ||
+                  (formValid === false && !formValues.firstName.value)) && (
+                  <Error role="alert">First name is required.</Error>
+                )}
               </InputContainer>
+
               <InputContainer>
                 <Input
                   required
@@ -142,7 +185,17 @@ const ContactModal = ({ modalActive, setModalActive }) => {
                     setFormValues({
                       ...formValues,
                       lastName: {
+                        ...formValues.lastName,
                         value: e.target.value,
+                      },
+                    });
+                  }}
+                  onBlur={() => {
+                    setFormValues({
+                      ...formValues,
+                      lastName: {
+                        ...formValues.lastName,
+                        touched: true,
                       },
                     });
                   }}
@@ -151,9 +204,10 @@ const ContactModal = ({ modalActive, setModalActive }) => {
                   type="text"
                   maxLength="25"
                 />
-                {/* {formValues.lastName.error === true ? (
-                  <Error>Please enter your last name.</Error>
-                ) : null} */}
+                {((!formValues.lastName.value && formValues.lastName.touched) ||
+                  (formValid === false && !formValues.lastName.value)) && (
+                  <Error role="alert">Last name is required.</Error>
+                )}
               </InputContainer>
               <InputContainer>
                 <Input
@@ -161,7 +215,17 @@ const ContactModal = ({ modalActive, setModalActive }) => {
                     setFormValues({
                       ...formValues,
                       email: {
+                        ...formValues.email,
                         value: e.target.value,
+                      },
+                    });
+                  }}
+                  onBlur={() => {
+                    setFormValues({
+                      ...formValues,
+                      email: {
+                        ...formValues.email,
+                        touched: true,
                       },
                     });
                   }}
@@ -169,28 +233,26 @@ const ContactModal = ({ modalActive, setModalActive }) => {
                   placeholder="Email"
                   type="email"
                 />
-                {/* {formValues.email.error === true ? (
-                  <Error>Please enter an email.</Error>
-                ) : null} */}
+                {((!formValues.email.value && formValues.email.touched) ||
+                  (formValid === false && !formValues.email.value)) && (
+                  <Error role="alert">Email is required.</Error>
+                )}
               </InputContainer>
               <InputContainer>
                 <Input
                   onChange={(e) => {
-                    // setFormValues({
-                    //   ...formValues,
-                    //   phone: {
-                    //     value: e.target.value,
-                    //   },
-                    // });
+                    setFormValues({
+                      ...formValues,
+                      phone: {
+                        value: e.target.value,
+                      },
+                    });
                     phoneFormatter(e.target.value);
                   }}
                   value={formValues.phone.value}
                   placeholder="Phone"
                   type="num"
                 />
-                {/* {formValues.phone.error === true ? (
-                  <Error>Please enter a phone number.</Error>
-                ) : null} */}
               </InputContainer>
             </FormFields>
             <Comments
@@ -206,21 +268,35 @@ const ContactModal = ({ modalActive, setModalActive }) => {
               placeholder="Comments"
               type="text"
             />
-            <Button
-              modal={true}
-              handleKeyDown={(e) => {
-                e.preventDefault();
-                if (e.keyCode === 13) {
+            {!loading ? (
+              <Button
+                modal={true}
+                handleKeyDown={(e) => {
+                  e.preventDefault();
+                  if (e.keyCode === 13) {
+                    submitForm();
+                  }
+                }}
+                handleClick={(e) => {
+                  e.preventDefault();
                   submitForm();
-                }
-              }}
-              handleClick={(e) => {
-                e.preventDefault();
-                submitForm();
-              }}
-              type="submit"
-              text="Send"
-            />
+                }}
+                type="submit"
+                text="Send"
+              />
+            ) : (
+              <Button
+                modal={true}
+                disabled={true}
+                icon={faSpinner}
+                handleKeyDown={(e) => {
+                  e.preventDefault();
+                }}
+                handleClick={(e) => {}}
+                type="button"
+                text="Send"
+              />
+            )}
           </Form>
         </ModalContent>
       )}
