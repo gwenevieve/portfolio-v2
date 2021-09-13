@@ -1,12 +1,17 @@
 import { useState } from "react";
-import styled from "styled-components";
-import AriaModal from "react-aria-modal";
+
 import Button from "./Button";
+
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+
 import { send } from "emailjs-com";
+import styled from "styled-components";
+import AriaModal from "react-aria-modal";
+import ReactGA from "react-ga";
 
 const ContactModal = ({ modalActive, setModalActive }) => {
+  ReactGA.initialize("UA-131380948-1");
   const [formValues, setFormValues] = useState({
     firstName: { value: "", error: false, touched: false },
     lastName: { value: "", error: false, touched: false },
@@ -103,6 +108,10 @@ const ContactModal = ({ modalActive, setModalActive }) => {
         "user_CjPTrPI4mvMSmkdfOAyvz"
       )
         .then(() => {
+          ReactGA.event({
+            category: "Submit",
+            action: "Contact form submit",
+          });
           setFormSuccess(true);
           setLoading(false);
         })

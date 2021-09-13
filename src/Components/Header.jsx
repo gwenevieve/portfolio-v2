@@ -1,4 +1,5 @@
 import Button from "./Button";
+
 import styled, { keyframes } from "styled-components";
 
 const Header = ({ setModalActive }) => {

@@ -1,14 +1,21 @@
 import { useState } from "react";
+
 import Header from "./Components/Header";
 import TechList from "./Components/TechList";
 import Socials from "./Components/Social";
 import ProjectList from "./Components/ProjectList";
 import Footer from "./Components/Footer";
 import ContactModal from "./Components/Modal";
+
 import styled from "styled-components";
+import ReactGA from "react-ga";
 
 function App() {
   const [modalActive, setModalActive] = useState(false);
+
+  ReactGA.initialize("UA-131380948-1");
+  ReactGA.pageview("Homepage");
+
   return (
     <Container>
       <Header setModalActive={setModalActive} />

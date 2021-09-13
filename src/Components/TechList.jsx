@@ -1,4 +1,5 @@
 import Lists from "../Lists";
+
 import styled from "styled-components";
 
 const TechList = () => {
