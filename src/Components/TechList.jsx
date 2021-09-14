@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const TechList = () => {
   return (
-    <Techs>
+    <Techs aria-label="This section contains information about the technologies I've recently worked with">
       <Section>
         <Heading>Technologies</Heading>
         <Text>Some of the technologies I've recently worked with:</Text>
@@ -17,7 +17,7 @@ const TechList = () => {
   );
 };
 
-const Techs = styled.div`
+const Techs = styled.aside`
   width: 80%;
   margin: 20px 30px;
   @media (min-width: 992px) {

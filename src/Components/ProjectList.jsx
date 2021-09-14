@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const ProjectList = () => {
   return (
-    <ProjectContainer>
+    <ProjectContainer aria-label="This section contains information about my projects">
       <Section>
         <Heading>Projects</Heading>
         <Text>

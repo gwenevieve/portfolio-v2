@@ -14,7 +14,10 @@ const ModalButton = ({
   return (
     <>
       {icon && !modal ? (
-        <ButtonIcon type={type} onClick={handleClick ? handleClick : undefined}>
+        <ButtonIcon
+          aria-label={aria}
+          type={type}
+          onClick={handleClick ? handleClick : undefined}>
           <FontAwesomeIcon icon={icon} />
         </ButtonIcon>
       ) : null}

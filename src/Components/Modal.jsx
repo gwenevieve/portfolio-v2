@@ -137,6 +137,7 @@ const ContactModal = ({ modalActive, setModalActive }) => {
           <ModalTop>
             <Heading>Contact me</Heading>
             <Button
+              aria="Close the contact modal"
               type="button"
               icon={faTimes}
               handleClick={() => setModalActive(!modalActive)}
@@ -254,20 +255,22 @@ const ContactModal = ({ modalActive, setModalActive }) => {
                   type="num"
                 />
               </InputContainer>
+              <InputContainerTextArea>
+                <Comments
+                  onChange={(e) => {
+                    setFormValues({
+                      ...formValues,
+                      comments: {
+                        value: e.target.value,
+                      },
+                    });
+                  }}
+                  rows="4"
+                  placeholder="Comments"
+                  type="text"
+                />
+              </InputContainerTextArea>
             </FormFields>
-            <Comments
-              onChange={(e) => {
-                setFormValues({
-                  ...formValues,
-                  comments: {
-                    value: e.target.value,
-                  },
-                });
-              }}
-              rows="4"
-              placeholder="Comments"
-              type="text"
-            />
             {!loading ? (
               <Button
                 modal={true}
@@ -306,10 +309,15 @@ const ContactModal = ({ modalActive, setModalActive }) => {
 
 const ModalContent = styled.div`
   background-color: #ffffff;
-  width: 500px;
+  width: 450px;
   margin-top: 40px;
   padding: 40px;
   border-radius: 5px;
+  @media (max-width: 500px) {
+    width: 280px;
+    padding: 20px;
+    margin-top: 20px;
+  }
 `;
 
 const ModalTop = styled.div`
@@ -319,15 +327,19 @@ const ModalTop = styled.div`
 `;
 
 const Form = styled.form`
-  padding-top: 20px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 const FormFields = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  @media (max-width: 500px) {
+    flex-direction: column;
+    width: 280px;
+  }
 `;
 
 const Heading = styled.h4`
@@ -337,6 +349,9 @@ const Heading = styled.h4`
   font-family: "Poppins", sans-serif;
   line-height: 34px;
   margin: 0;
+  @media (max-width: 500px) {
+    font-size: 24px;
+  }
 `;
 
 const Text = styled.p`
@@ -348,7 +363,7 @@ const Input = styled.input`
   font-family: "Lato", sans-serif;
   font-size: 18px;
   padding: 10px 8px;
-  margin-bottom: 18px;
+  margin-top: 18px;
   border: 1px solid #1b1b1b;
   border-radius: 2px;
   ::placeholder,
@@ -364,15 +379,29 @@ const InputContainer = styled.div`
   width: 45%;
   display: flex;
   flex-direction: column;
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+`;
+
+const InputContainerTextArea = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 500px) {
 `;
 
 const Error = styled.div`
-  color: red;
+  color: #b50404;
+  margin-top: 6px;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
 `;
 
 const Comments = styled.textarea`
   font-family: "Lato", sans-serif;
   padding: 8px;
+  margin-top: 18px;
   font-weight: 300;
   border: 1px solid #1b1b1b;
   border-radius: 2px;
@@ -384,6 +413,8 @@ const Comments = styled.textarea`
     color: #b3b1b1;
     font-size: 14px;
     font-weight: bolder;
+  }
+  @media (max-width: 500px) {
   }
 `;
 

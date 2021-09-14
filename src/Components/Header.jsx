@@ -64,7 +64,7 @@ const Heading = styled.h1`
     -webkit-animation: ${Blinking} 1.5s infinite;
     animation: ${Blinking} 1.5s infinite;
   }
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     font-size: 42px;
   }
 `;

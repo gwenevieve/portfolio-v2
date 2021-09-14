@@ -5,7 +5,7 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
 const SocialLinks = ({ setModalActive }) => {
   return (
-    <Socials>
+    <Socials aria-label="Social Links">
       <Link
         text="Github"
         icon={faGithub}
@@ -25,7 +25,7 @@ const SocialLinks = ({ setModalActive }) => {
   );
 };
 
-const Socials = styled.div`
+const Socials = styled.aside`
   display: none;
   @media (min-width: 992px) {
     position: fixed;
