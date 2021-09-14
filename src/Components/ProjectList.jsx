@@ -1,8 +1,11 @@
 import Lists from "../Lists";
 import Link from "./Link";
+
 import styled from "styled-components";
+import ReactGA from "react-ga";
 
 const ProjectList = () => {
+  ReactGA.initialize("UA-131380948-1");
   return (
     <ProjectContainer aria-label="This section contains information about my projects">
       <Section>
@@ -21,7 +24,16 @@ const ProjectList = () => {
                   return <TechItem key={techIndex}>{tech}</TechItem>;
                 })}
               </TechItems>
-              <Link link={project.Github} text="Github" />
+              <Link
+                link={project.Github}
+                text="Github"
+                handleClick={() =>
+                  ReactGA.event({
+                    category: "Click",
+                    action: `${project.name} Github project link`,
+                  })
+                }
+              />
             </Project>
           );
         })}
