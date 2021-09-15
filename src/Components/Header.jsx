@@ -24,13 +24,13 @@ const Header = ({ setModalActive }) => {
         aria="Opens contact dialog"
         type="button"
         text="Contact me"
-        handleClick={
-          (() => setModalActive(true),
+        handleClick={() => {
+          setModalActive(true);
           ReactGA.event({
             category: "Click",
             action: "Email modal open",
-          }))
-        }
+          });
+        }}
       />
     </HeaderContainer>
   );

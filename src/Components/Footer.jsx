@@ -40,13 +40,13 @@ const Footer = ({ setModalActive }) => {
           socialLinks={true}
           icon={faEnvelope}
           text="Contact me"
-          handleClick={
-            (() => setModalActive(true),
+          handleClick={() => {
+            setModalActive(true);
             ReactGA.event({
               category: "Click",
               action: "Email modal open",
-            }))
-          }
+            });
+          }}
         />
       </Socials>
       <Copyright>
