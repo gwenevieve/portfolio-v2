@@ -154,7 +154,9 @@ const ButtonIcon = styled.button`
     padding: 12px 0px;
     margin: 10px 0px;
     color: #d6d6d6;
-    width: 80px;
+    @media (max-width: 500px) {
+      width: 80px;
+    }
     svg {
       margin-bottom: 5px;
       font-size: 40px;
