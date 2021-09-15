@@ -1,8 +1,10 @@
 import Button from "./Button";
 
 import styled, { keyframes } from "styled-components";
+import ReactGA from "react-ga";
 
 const Header = ({ setModalActive }) => {
+  ReactGA.initialize("UA-131380948-1");
   return (
     <HeaderContainer>
       <Text>Hi there, I'm</Text>
@@ -22,7 +24,13 @@ const Header = ({ setModalActive }) => {
         aria="Opens contact dialog"
         type="button"
         text="Contact me"
-        handleClick={() => setModalActive(true)}
+        handleClick={
+          (() => setModalActive(true),
+          ReactGA.event({
+            category: "Click",
+            action: "Email modal open",
+          }))
+        }
       />
     </HeaderContainer>
   );

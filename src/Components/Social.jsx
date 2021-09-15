@@ -1,4 +1,5 @@
 import Link from "./Link";
+import Button from "./Button";
 
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
@@ -32,9 +33,12 @@ const SocialLinks = ({ setModalActive }) => {
           });
         }}
       />
-      <Link
-        text="Email"
+      <Button
+        aria="Opens contact dialog"
+        type="button"
+        socialLinks={true}
         icon={faEnvelope}
+        text="Contact me"
         handleClick={
           (() => setModalActive(true),
           ReactGA.event({

@@ -6,6 +6,7 @@ const ModalButton = ({
   icon,
   type,
   modal,
+  socialLinks,
   aria,
   disabled,
   handleClick,
@@ -13,7 +14,7 @@ const ModalButton = ({
 }) => {
   return (
     <>
-      {icon && !modal ? (
+      {icon && !modal && !socialLinks ? (
         <ButtonIcon
           aria-label={aria}
           type={type}
@@ -33,6 +34,18 @@ const ModalButton = ({
             <FontAwesomeIcon icon={icon} />
           </FontAwesomeAnimation>
         </ButtonModalIcon>
+      ) : null}
+
+      {icon && socialLinks ? (
+        <ButtonIcon
+          socialLinks
+          type={type}
+          icon={icon}
+          disabled={disabled ? disabled : undefined}
+          onClick={handleClick ? handleClick : undefined}>
+          <FontAwesomeIcon icon={icon} />
+          {text}
+        </ButtonIcon>
       ) : null}
 
       {!icon ? (
@@ -129,6 +142,31 @@ const ButtonIcon = styled.button`
   &:hover {
     cursor: pointer;
   }
+  ${({ socialLinks }) =>
+    socialLinks &&
+    `
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: unset;
+    font-size: 16px;
+    padding: 12px 0px;
+    margin: 10px 0px;
+    color: #d6d6d6;
+    svg {
+    margin-bottom: 5px;
+    font-size: 40px;
+    @media (max-width: 500px) {
+      font-size: 24px;
+    }
+    }
+    &:hover {
+    color: unset;
+    background-color: unset;
+    cursor: pointer;
+    }
+  `}
 `;
 
 export default ModalButton;
