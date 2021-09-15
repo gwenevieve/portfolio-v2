@@ -12,13 +12,12 @@ const Header = ({ setModalActive }) => {
       <Text>
         Welcome to my small space on the web! I'm Marie, a front-end developer
         and UX designer that aspires to create breathtaking digital experiences.
-        I graduated from Seneca College's Web Development in 2017, and from
-        HackerYou's UX Design in 2018.
       </Text>
       <Text>
-        I've also taken a few courses at Ryerson University for Cyber Security
-        and Digital Forensics, along with a some networking courses at
-        Centennial College.
+        I graduated from Seneca College's Web Development in 2017, and from
+        HackerYou's UX Design in 2018. I've also taken a few courses at Ryerson
+        University for Cyber Security and Digital Forensics, along with some
+        networking courses at Centennial College.
       </Text>
       <Button
         aria="Opens contact dialog"

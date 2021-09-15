@@ -9,7 +9,7 @@
   "projects": [
     {
       "name": "Portfolio v2",
-      "desc": "Updated version of my portfolio website.",
+      "desc": "Updated and accessible version of my portfolio website.",
       "techUsed": [
         "React",
         "styled-components",
@@ -17,7 +17,8 @@
         "CSS Keyframes",
         "Flexbox",
         "ES6",
-        "Yarn"
+        "Yarn",
+        "WCAG 2.0"
       ],
       "Github": "https://github.com/gwenevieve/portfolio-v2"
     },
