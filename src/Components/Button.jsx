@@ -154,17 +154,18 @@ const ButtonIcon = styled.button`
     padding: 12px 0px;
     margin: 10px 0px;
     color: #d6d6d6;
+    width: 80px;
     svg {
-    margin-bottom: 5px;
-    font-size: 40px;
-    @media (max-width: 500px) {
-      font-size: 24px;
-    }
+      margin-bottom: 5px;
+      font-size: 40px;
+      @media (max-width: 500px) {
+        font-size: 24px;
+      }
     }
     &:hover {
-    color: unset;
-    background-color: unset;
-    cursor: pointer;
+      color: unset;
+      background-color: unset;
+      cursor: pointer;
     }
   `}
 `;
