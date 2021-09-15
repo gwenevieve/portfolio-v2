@@ -38,7 +38,7 @@ const SocialLinks = ({ setModalActive }) => {
         type="button"
         socialLinks={true}
         icon={faEnvelope}
-        text="Contact me"
+        text="Email"
         handleClick={() => {
           setModalActive(true);
           ReactGA.event({
