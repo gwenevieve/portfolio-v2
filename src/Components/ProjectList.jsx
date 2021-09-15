@@ -71,7 +71,7 @@ const ProjectTitle = styled.h4`
   font-size: 28px;
   font-weight: 300;
   font-family: "Poppins", sans-serif;
-  line-height: 26px;
+  line-height: 34px;
   margin: 0;
   padding-top: 20px;
 `;
