@@ -304,7 +304,6 @@ const ContactModal = ({ modalActive, setModalActive }) => {
                 handleKeyDown={(e) => {
                   e.preventDefault();
                 }}
-                handleClick={(e) => {}}
                 type="button"
                 text="Send"
               />

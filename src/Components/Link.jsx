@@ -8,13 +8,14 @@ const Link = ({ text, link, icon, handleClick }) => {
         <StyledIcon
           onClick={handleClick ? handleClick : undefined}
           icon={icon}
+          rel="noopener noreferrer"
           href={link}
           target="_blank">
           <FontAwesomeIcon icon={icon} />
           {text}
         </StyledIcon>
       ) : (
-        <StyledLink href={link} target="_blank">
+        <StyledLink rel="noopener noreferrer" href={link} target="_blank">
           {text}
         </StyledLink>
       )}
