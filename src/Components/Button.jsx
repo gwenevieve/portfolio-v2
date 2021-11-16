@@ -40,7 +40,7 @@ const ModalButton = ({
         </ButtonModalIcon>
       ) : null}
 
-      {icon && modal ? (
+      {icon && modal && type !== "submit" ? (
         <ButtonIcon
           modal={modal}
           type={type}

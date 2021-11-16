@@ -130,6 +130,7 @@ const ContactModal = ({ modalActive, setModalActive }) => {
             <Button
               type="button"
               icon={faTimes}
+              modal={true}
               handleClick={() => {
                 setModalActive(!modalActive);
                 clearForm();
@@ -305,7 +306,7 @@ const ContactModal = ({ modalActive, setModalActive }) => {
                 handleKeyDown={(e) => {
                   e.preventDefault();
                 }}
-                type="button"
+                type="submit"
                 text="Send"
               />
             )}
