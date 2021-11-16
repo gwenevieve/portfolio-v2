@@ -148,6 +148,7 @@ const ContactModal = ({ modalActive, setModalActive }) => {
             <Button
               aria="Close the contact modal"
               type="button"
+              modal={true}
               icon={faTimes}
               handleClick={() => setModalActive(!modalActive)}
             />
@@ -381,6 +382,9 @@ const Input = styled.input`
     color: #b3b1b1;
     font-weight: 300;
   }
+  &:focus {
+    outline: 3px dashed #1b1b1b;
+  }
 `;
 
 const InputContainer = styled.div`
@@ -422,7 +426,8 @@ const Comments = styled.textarea`
     font-size: 14px;
     font-weight: bolder;
   }
-  @media (max-width: 500px) {
+  &:focus {
+    outline: 3px dashed #1b1b1b;
   }
 `;
 

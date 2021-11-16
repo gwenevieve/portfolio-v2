@@ -23,17 +23,32 @@ const ModalButton = ({
         </ButtonIcon>
       ) : null}
 
-      {icon && modal ? (
+      {icon && modal && type === "submit" ? (
         <ButtonModalIcon
           modal={modal}
           type={type}
           icon={icon}
           disabled={disabled ? disabled : undefined}
           onClick={handleClick ? handleClick : undefined}>
-          <FontAwesomeAnimation>
+          {disabled ? (
+            <FontAwesomeAnimation>
+              <FontAwesomeIcon icon={icon} />
+            </FontAwesomeAnimation>
+          ) : (
             <FontAwesomeIcon icon={icon} />
-          </FontAwesomeAnimation>
+          )}
         </ButtonModalIcon>
+      ) : null}
+
+      {icon && modal ? (
+        <ButtonIcon
+          modal={modal}
+          type={type}
+          icon={icon}
+          disabled={disabled ? disabled : undefined}
+          onClick={handleClick ? handleClick : undefined}>
+          <FontAwesomeIcon icon={icon} />
+        </ButtonIcon>
       ) : null}
 
       {icon && socialLinks ? (
@@ -83,6 +98,11 @@ const Button = styled.button`
     background-color: ${(props) =>
       props.modal === true ? "#1b1b1b" : "#d6d6d6"};
     cursor: pointer;
+  }
+  &:focus {
+    transition: none;
+    outline: ${(props) =>
+      props.modal === true ? " 3px dashed #1b1b1b" : "3px dashed #ffffff"};
   }
 `;
 
@@ -142,10 +162,18 @@ const ButtonIcon = styled.button`
   &:hover {
     cursor: pointer;
   }
+  &:focus {
+    transition: none;
+    outline: ${(props) =>
+      props.modal === true && props.icon
+        ? "3px dashed #1b1b1b"
+        : "3px dashed #d6d6d6"};
+  }
   ${({ socialLinks }) =>
     socialLinks &&
     `
     display: flex;
+    width: 120px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -154,6 +182,9 @@ const ButtonIcon = styled.button`
     padding: 12px 0px;
     margin: 10px 0px;
     color: #d6d6d6;
+    @media (min-width: 992px) {
+      margin-left: 5px;
+    }
     @media (max-width: 500px) {
       width: 80px;
     }
@@ -168,6 +199,10 @@ const ButtonIcon = styled.button`
       color: unset;
       background-color: unset;
       cursor: pointer;
+    }
+    &:focus {
+      transition: none;
+      outline: 3px dashed #d6d6d6;
     }
   `}
 `;

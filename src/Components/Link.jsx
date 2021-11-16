@@ -43,6 +43,10 @@ const StyledLink = styled.a`
     background-color: #d6d6d6;
     cursor: pointer;
   }
+  &:focus {
+    transition: none;
+    outline: 3px dashed #d6d6d6;
+  }
 `;
 
 const StyledIcon = styled.a`
@@ -51,7 +55,6 @@ const StyledIcon = styled.a`
   color: #d6d6d6;
   background: unset;
   border: 1px solid #d6d6d6;
-  border-radius: 5px;
   padding: 12px 0px;
   margin: 20px 0px;
   width: 120px;
@@ -67,6 +70,10 @@ const StyledIcon = styled.a`
     background-color: #d6d6d6;
     cursor: pointer;
   }
+  &:focus {
+    transition: none;
+    outline: 3px dashed #d6d6d6;
+  }
 
   ${({ icon }) =>
     icon &&
@@ -77,6 +84,9 @@ const StyledIcon = styled.a`
     justify-content: center;
     border: unset;
     margin: 10px 0px;
+    @media (min-width: 992px) {
+      margin-left: 5px;
+    }
     svg {
       margin-bottom: 5px;
       font-size: 40px;
@@ -88,6 +98,10 @@ const StyledIcon = styled.a`
       color: unset;
       background-color: unset;
       cursor: pointer;
+    }
+    &:focus {
+      transition: none;
+      outline: 3px dashed #d6d6d6;
     }
   `}
 `;
