@@ -1,8 +1,8 @@
 {
   "techList": [
-    "HTML5 (Handlebars, YAML, Markdown)",
+    "HTML5 (Handlebars, YAML)",
     "CSS (SCSS/SASS/LESS, Bootstrap, ZURB Foundation, Material UI)",
-    "JavaScript (React, jQuery, Typescript React Native, Node.js)",
+    "JavaScript (React.js, jQuery, Typescript, React Native, Node.js)",
     "Docker/Vagrant",
     "PHP (WordPress, Composer)"
   ],
