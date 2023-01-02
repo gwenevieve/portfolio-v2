@@ -2,11 +2,28 @@
   "techList": [
     "HTML5 (Handlebars, YAML)",
     "CSS (SCSS/SASS/LESS, Bootstrap, ZURB Foundation, Material UI)",
-    "JavaScript (React.js, jQuery, Typescript, React Native, Node.js)",
+    "JavaScript (React.js, jQuery, TypeScript, React Native, Node.js)",
     "Docker/Vagrant",
     "PHP (WordPress, Composer)"
   ],
   "projects": [
+    {
+      "name": "Mini Weather SPA",
+      "desc": "Uses the Mapbox API and OpenWeather API to display information about different cities and their weather.",
+      "techUsed": [
+        "React",
+        "TypeScript",
+        "OpenWeather API",
+        "Mapbox API",
+        "Custom hooks",
+        "styled-components",
+        "FontAwesome",
+        "CSS Keyframes",
+        "Material UI",
+        "Yarn"
+      ],
+      "Github": "https://github.com/gwenevieve/mini-weather-app"
+    },
     {
       "name": "Portfolio v2",
       "desc": "Updated and accessible version of my portfolio website.",
@@ -24,7 +41,7 @@
     },
     {
       "name": "React Social Card Components",
-      "desc": "Some social card components commonly seen around the web, built in React. Includes avatars, sliders, and a list! Recently converted from class based components to hook based components.",
+      "desc": "Some social card components commonly seen around the web, built in React. Recently converted from class based components to hook based components.",
       "techUsed": [
         "HTML5",
         "CSS (SCSS)",

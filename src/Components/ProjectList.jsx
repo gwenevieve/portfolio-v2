@@ -1,5 +1,5 @@
-import Lists from "../Lists";
-import Link from "./Link";
+import Lists from "../lists";
+import Link from "./link";
 
 import styled from "styled-components";
 import ReactGA from "react-ga";

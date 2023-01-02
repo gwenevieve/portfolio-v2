@@ -1,5 +1,5 @@
-import Link from "./Link";
-import Button from "./Button";
+import Link from "./link";
+import Button from "./button";
 
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";

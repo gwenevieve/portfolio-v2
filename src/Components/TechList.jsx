@@ -1,4 +1,4 @@
-import Lists from "../Lists";
+import Lists from "../lists";
 
 import styled from "styled-components";
 

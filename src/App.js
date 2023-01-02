@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-import Header from "./Components/Header";
-import TechList from "./Components/TechList";
-import Socials from "./Components/Social";
-import ProjectList from "./Components/ProjectList";
-import Footer from "./Components/Footer";
-import ContactModal from "./Components/Modal";
+import Header from "./components/header";
+import TechList from "./components/techList";
+import Socials from "./components/social";
+import ProjectList from "./components/projectList";
+import Footer from "./components/footer";
+import ContactModal from "./components/modal";
 
 import styled from "styled-components";
 import ReactGA from "react-ga";

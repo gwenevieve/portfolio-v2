@@ -1,4 +1,4 @@
-import Button from "./Button";
+import Button from "./button";
 
 import styled, { keyframes } from "styled-components";
 import ReactGA from "react-ga";
